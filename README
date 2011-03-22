@@ -1,0 +1,72 @@
+Create CSS from input HTML code.
+
+From:
+<div id="outer">
+   <div class="inner">
+        <h1>
+        </h1>
+        <p class="content">
+            <span class="date"></span>
+        </p>
+    </div>
+    <div class="inner">
+        <h1>
+        </h1>
+        <p class="content">
+            <span class="date"></span>
+        </p>
+    </div>
+</div>
+
+To: (if minified)
+div#outer {}
+div#outer div.inner {}
+div#outer div.inner h1 {}
+div#outer div.inner p.content {}
+div#outer div.inner p.content span.date {}
+
+of if not minified:
+
+div#outer {
+	
+}
+
+	div#outer div.inner {
+
+	}
+
+		div#outer div.inner h1 {
+
+		}
+
+		div#outer div.inner p.content {
+
+		}
+
+			div#outer div.inner p.content span.date {
+
+			}
+
+----------------------------------
+
+Usage: add this script as external command or "Custom command" (like in geany (http://www.geany.com)).
+
+----------------------------------
+
+Config (at the beginning of file):
+
+MINIFIED:
+if False the output css formatted by tabs by parent-child relation
+if True the output css is minified
+
+
+RETURNORIGINAL:
+if False only the css selectors are returned
+if True the input html code returned as well
+
+TABCHAR:
+Tab characther for indenting when MINFIED = False
+
+----------------------------------
+
+License: do whatever you want :)
