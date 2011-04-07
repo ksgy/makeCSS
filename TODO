@@ -1,2 +1,1 @@
-* do not include element name if it has class or id
-* do not inlcude parent if the parend has id (only the last element with id)
+

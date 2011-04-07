@@ -39,7 +39,7 @@ class makeCSS():
 			pid = ''
 			pc = ''
 			
-			if element.parentNode.nodeType == element.parentNode.ELEMENT_NODE:
+			if element.parentNode.nodeType == element.parentNode.ELEMENT_NODE and element.getAttribute('id') == '': 
 				par(element.parentNode)
 				# TODO elso elemet ismetli
 			
@@ -58,7 +58,10 @@ class makeCSS():
 				pc = '.' + pc
 			
 			if element.nodeName != 'makeCSSContainer':
-				self.retpar += element.nodeName + pid + pc + ' ' 
+				if pid == '' and pc == '':
+					self.retpar += element.nodeName + ' '
+				else:
+					self.retpar += pid + pc + ' ' 
 			#print retpar
 			
 		
